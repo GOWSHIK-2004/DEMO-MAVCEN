@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>goat</groupId>
+  <artifactId>goat</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+       <dependency>
+             <groupId>org.sonarsource.scanner.maven</groupId>
+             <artifactId>sonar-maven-plugin</artifactId>
+             <version>3.9.0.2155</version>
+       
+       </dependency>
+  
+  
+  
+  </dependencies>
+  
+  
+  
+  
+  <build>
+  <finalName>goat-2026</finalName>
+     <plugins>
+     <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+       <artifactId>maven-jar-plugin</artifactId>
+       <version>3.4.1</version>
+       <configuration>
+          <archive>
+          <manifest>
+               <addClasspath>true</addClasspath>
+               <classpathPrefix>lib</classpathPrefix>
+               <mainClass>vijaypkg.vijayClass</mainClass>
+           </manifest>
+          </archive>
+        </configuration>
+       </plugin>
+      </plugins>     
+   </build>
+   
+   
+   <profiles>
+      <profile>
+           <id>sonar</id>
+           <activation>
+               <activeByDefault>true</activeByDefault>
+               
+               
+            
+           </activation>
+           <properties>
+           <sonar.host.url>http://localhost:9000</sonar.host.url></properties>
+       
+      </profile>
+   
+  </profiles>
+</project>
